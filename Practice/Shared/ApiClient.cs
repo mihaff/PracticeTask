@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace YourProjectName.Shared
+namespace Practice.Shared
 {
     public class ApiClient
     {
@@ -14,7 +14,7 @@ namespace YourProjectName.Shared
 
         public async Task<DataModel[]> GetData()
         {
-            return await httpClient.GetJsonAsync<DataModel[]>("api/data");
+            return await HttpClient.GetFromJsonAsync<DataModel[]>("api/data");
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 
 namespace Practice.Services
@@ -14,7 +15,7 @@ namespace Practice.Services
 
         public async Task<Models.DataModel[]> GetData()
         {
-            return await httpClient.GetJsonAsync<Models.DataModel[]>("api/data");
+            return await httpClient.GetFromJsonAsync<Models.DataModel[]>("api/data");
         }
     }
 }
