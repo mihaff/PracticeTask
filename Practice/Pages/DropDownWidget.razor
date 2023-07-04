@@ -1,0 +1,32 @@
+﻿@page "/dropdownwidget"
+
+<h3>Выпадающий виджет</h3>
+
+<div class="dropdown">
+    <button class="dropdown-toggle" @onclick="ToggleDropdown">
+        Выберите элемент
+    </button>
+    <ul class="dropdown-menu" style="display: @(isDropdownOpen ? " block" : "none" )">
+        @foreach (var item in data)
+        {
+        <li class="dropdown-item">@item.Name</li>
+        }
+    </ul>
+</div>
+
+@code {
+    private bool isDropdownOpen = false;
+    private DataModel[] data;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Получение данных с помощью ApiClient
+        var apiClient = new ApiClient(HttpClient);
+        data = await apiClient.GetData();
+    }
+
+    private void ToggleDropdown()
+    {
+        isDropdownOpen = !isDropdownOpen;
+    }
+}
