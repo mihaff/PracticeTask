@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace YourProjectName.Shared
+namespace Practice.Shared
 {
     public class ApiClient
     {
