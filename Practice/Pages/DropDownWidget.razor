@@ -1,6 +1,9 @@
 ﻿@page "/dropdownwidget"
+@inject HttpClient Http
 
-<h3>Выпадающий виджет</h3>
+<h1>Выпадающий виджет</h1>
+
+<p>This component demonstrates fetching stock data from the server.</p>
 
 <div class="dropdown">
     <button class="dropdown-toggle" @onclick="ToggleDropdown">
@@ -9,7 +12,7 @@
     <ul class="dropdown-menu" style="display: @(isDropdownOpen ? " block" : "none" )">
         @foreach (var item in data)
         {
-        <li class="dropdown-item">@item.Name</li>
+            <li class="dropdown-item">@item.Name</li>
         }
     </ul>
 </div>
