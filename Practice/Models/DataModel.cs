@@ -2,9 +2,10 @@
 {
     public class DataModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Cost { get; set; }
-        // другие свойства 
+        public string Ticker { get; set; }
+        public double Price { get; set; }
+        public double Change_Amount { get; set; }
+        public double Change_Percentage { get; set; }
+        public int Volume { get; set; }
     }
 }

@@ -13,9 +13,9 @@ namespace Practice.Services
             this.httpClient = httpClient;
         }
 
-        public async Task<Models.DataModel[]> GetData()
+        public async Task<datamodels.DataModel[]> GetData()
         {
-            return await httpClient.GetFromJsonAsync<Models.DataModel[]>("api/data");
+            return await httpClient.GetFromJsonAsync<Models.DataModel[]>("https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=8IRABS7SCLY1UNPR");
         }
     }
 }
